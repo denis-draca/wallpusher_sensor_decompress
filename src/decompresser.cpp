@@ -37,7 +37,7 @@ void DECOMPRESSER::left_scan(const std_msgs::Int8MultiArrayConstPtr &input)
 
     if(input_scan_left_.size() > 512)
     {
-        ROS_INFO("TOO MANY DATA POINTS SENT -> %d", input_scan_left_.size());
+        ROS_INFO("TOO MANY DATA POINTS SENT -> %d", (int)input_scan_left_.size());
         return;
     }
 
@@ -90,7 +90,7 @@ void DECOMPRESSER::left_scan(const std_msgs::Int8MultiArrayConstPtr &input)
 
     if(v.size() == 0)
     {
-        ROS_INFO("DECOMPRESSED DATA is EMPTY -> %d", v.size());
+        ROS_INFO("DECOMPRESSED DATA is EMPTY -> %d", (int)v.size());
         return;
     }
 
@@ -117,7 +117,7 @@ void DECOMPRESSER::left_scan(const std_msgs::Int8MultiArrayConstPtr &input)
     std::cout << "------------------ TOTAT FORCE END------------------" <<std::endl<<std::endl;
     if (v.size() > 512)
     {
-        ROS_INFO("DECOMPRESSED DATA HAS TOO MANY DATA POINTS -> %d", v.size());
+        ROS_INFO("DECOMPRESSED DATA HAS TOO MANY DATA POINTS -> %d", (int)v.size());
         return;
     }
 
@@ -129,7 +129,7 @@ void DECOMPRESSER::left_scan(const std_msgs::Int8MultiArrayConstPtr &input)
         {
             if (pos >= v.size())
             {
-                ROS_INFO("ACCESSING BEYOND THE DECOMPRESSED VECTOR pos -> %d  v.size() -> %d", pos, v.size());
+                ROS_INFO("ACCESSING BEYOND THE DECOMPRESSED VECTOR pos -> %d  v.size() -> %d", (int)pos, (int)v.size());
                 return;
             }
             if(v.at(pos) == max)
@@ -177,7 +177,7 @@ void DECOMPRESSER::right_scan(const std_msgs::Int16MultiArrayConstPtr &input)
 
     if(input_scan_right_.size() > 512)
     {
-        ROS_INFO("TOO MANY DATA POINTS SENT -> %d", input_scan_right_.size());
+        ROS_INFO("TOO MANY DATA POINTS SENT -> %d", (int)input_scan_right_.size());
         return;
     }
 
@@ -230,7 +230,7 @@ void DECOMPRESSER::right_scan(const std_msgs::Int16MultiArrayConstPtr &input)
 
     if(v.size() == 0)
     {
-        ROS_INFO("DECOMPRESSED DATA is EMPTY -> %d", v.size());
+        ROS_INFO("DECOMPRESSED DATA is EMPTY -> %d", (int)v.size());
         return;
     }
 
@@ -257,7 +257,7 @@ void DECOMPRESSER::right_scan(const std_msgs::Int16MultiArrayConstPtr &input)
     std::cout << "------------------ TOTAT FORCE END------------------" <<std::endl<<std::endl;
     if (v.size() > 512)
     {
-        ROS_INFO("DECOMPRESSED DATA HAS TOO MANY DATA POINTS -> %d", v.size());
+        ROS_INFO("DECOMPRESSED DATA HAS TOO MANY DATA POINTS -> %d", (int)v.size());
         return;
     }
 
@@ -269,7 +269,7 @@ void DECOMPRESSER::right_scan(const std_msgs::Int16MultiArrayConstPtr &input)
         {
             if (pos >= v.size())
             {
-                ROS_INFO("ACCESSING BEYOND THE DECOMPRESSED VECTOR pos -> %d  v.size() -> %d", pos, v.size());
+                ROS_INFO("ACCESSING BEYOND THE DECOMPRESSED VECTOR pos -> %d  v.size() -> %d", (int)pos, (int)v.size());
                 return;
             }
             if(v.at(pos) == max)
