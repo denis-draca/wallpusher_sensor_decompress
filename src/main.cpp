@@ -3,13 +3,14 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "listener");
+  ros::init(argc, argv, "wallpusher_listener");
   ros::NodeHandle n;
 
-  DECOMPRESSER decompress;
+  DECOMPRESSER decompress(n);
 
 
   ros::spin();
+  ros::shutdown();
 
   return 0;
 }
